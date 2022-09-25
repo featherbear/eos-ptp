@@ -2,7 +2,9 @@
 
 ## Wireshark Filter
 
-`(eth.src == 58:d5:0a:13:a8:0b || eth.dst == 58:d5:0a:13:a8:0b) && (ip.dst == 192.168.0.46 || ip.src == 192.168.0.46 ) && !(tcp.len == 0)`
+* `(eth.src == 58:d5:0a:13:a8:0b || eth.dst == 58:d5:0a:13:a8:0b) && (ip.dst == 192.168.0.46 || ip.src == 192.168.0.46 ) && !(tcp.len == 0)`
+* `((((eth.dst == 58:d5:0a:13:a8:0b) && (ip.dst == 192.168.0.46 || ip.src == 192.168.0.46 ) && !(tcp.len == 0)) && !http) && !(tcp.len==18))&&  !(tcp.len==30)`
+
 <!-- 
 ## Shutter
 
