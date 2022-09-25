@@ -1,0 +1,1119 @@
+yarn run v1.22.17
+$ nodemon src/discovery.ts
+[33m[nodemon] 2.0.20[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: ts,json[39m
+[32m[nodemon] starting `sucrase-node src/discovery.ts`[39m
+[Function: addListener]
+query {
+    "id": 0,
+    "type": "query",
+    "flags": 0,
+    "flag_qr": false,
+    "opcode": "QUERY",
+    "flag_aa": false,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [
+        {
+            "name": "CWC13a80b.local",
+            "type": "ANY",
+            "class": "UNKNOWN_32769"
+        }
+    ],
+    "answers": [],
+    "authorities": [
+        {
+            "name": "CWC13a80b.local",
+            "type": "A",
+            "ttl": 120,
+            "class": "IN",
+            "flush": false,
+            "data": "192.168.0.46"
+        }
+    ],
+    "additionals": []
+}
+query {
+    "id": 0,
+    "type": "query",
+    "flags": 0,
+    "flag_qr": false,
+    "opcode": "QUERY",
+    "flag_aa": false,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [
+        {
+            "name": "CWC13a80b.local",
+            "type": "ANY",
+            "class": "UNKNOWN_32769"
+        }
+    ],
+    "answers": [],
+    "authorities": [
+        {
+            "name": "CWC13a80b.local",
+            "type": "A",
+            "ttl": 120,
+            "class": "IN",
+            "flush": false,
+            "data": "192.168.0.46"
+        }
+    ],
+    "additionals": []
+}
+query {
+    "id": 0,
+    "type": "query",
+    "flags": 0,
+    "flag_qr": false,
+    "opcode": "QUERY",
+    "flag_aa": false,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [
+        {
+            "name": "CWC13a80b.local",
+            "type": "ANY",
+            "class": "UNKNOWN_32769"
+        }
+    ],
+    "answers": [],
+    "authorities": [
+        {
+            "name": "CWC13a80b.local",
+            "type": "A",
+            "ttl": 120,
+            "class": "IN",
+            "flush": false,
+            "data": "192.168.0.46"
+        }
+    ],
+    "additionals": []
+}
+query {
+    "id": 0,
+    "type": "query",
+    "flags": 0,
+    "flag_qr": false,
+    "opcode": "QUERY",
+    "flag_aa": false,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [
+        {
+            "name": "CWC13a80b.local",
+            "type": "ANY",
+            "class": "UNKNOWN_32769"
+        }
+    ],
+    "answers": [],
+    "authorities": [
+        {
+            "name": "CWC13a80b.local",
+            "type": "A",
+            "ttl": 120,
+            "class": "IN",
+            "flush": false,
+            "data": "192.168.0.46"
+        }
+    ],
+    "additionals": []
+}
+query {
+    "id": 0,
+    "type": "query",
+    "flags": 0,
+    "flag_qr": false,
+    "opcode": "QUERY",
+    "flag_aa": false,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [
+        {
+            "name": "CWC13a80b.local",
+            "type": "ANY",
+            "class": "UNKNOWN_32769"
+        }
+    ],
+    "answers": [],
+    "authorities": [
+        {
+            "name": "CWC13a80b.local",
+            "type": "A",
+            "ttl": 120,
+            "class": "IN",
+            "flush": false,
+            "data": "192.168.0.46"
+        }
+    ],
+    "additionals": []
+}
+query {
+    "id": 0,
+    "type": "query",
+    "flags": 0,
+    "flag_qr": false,
+    "opcode": "QUERY",
+    "flag_aa": false,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [
+        {
+            "name": "CWC13a80b.local",
+            "type": "ANY",
+            "class": "UNKNOWN_32769"
+        }
+    ],
+    "answers": [],
+    "authorities": [
+        {
+            "name": "CWC13a80b.local",
+            "type": "A",
+            "ttl": 120,
+            "class": "IN",
+            "flush": false,
+            "data": "192.168.0.46"
+        }
+    ],
+    "additionals": []
+}
+resp {
+    "id": 0,
+    "type": "response",
+    "flags": 1024,
+    "flag_qr": true,
+    "opcode": "QUERY",
+    "flag_aa": true,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [],
+    "answers": [
+        {
+            "name": "CWC13a80b.local",
+            "type": "A",
+            "ttl": 0,
+            "class": "IN",
+            "flush": true,
+            "data": "192.168.0.46"
+        }
+    ],
+    "authorities": [],
+    "additionals": []
+}
+resp {
+    "id": 0,
+    "type": "response",
+    "flags": 1024,
+    "flag_qr": true,
+    "opcode": "QUERY",
+    "flag_aa": true,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [],
+    "answers": [
+        {
+            "name": "CWC13a80b.local",
+            "type": "A",
+            "ttl": 0,
+            "class": "IN",
+            "flush": true,
+            "data": "192.168.0.46"
+        }
+    ],
+    "authorities": [],
+    "additionals": []
+}
+resp {
+    "id": 0,
+    "type": "response",
+    "flags": 1024,
+    "flag_qr": true,
+    "opcode": "QUERY",
+    "flag_aa": true,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [],
+    "answers": [
+        {
+            "name": "CWC13a80b.local",
+            "type": "A",
+            "ttl": 0,
+            "class": "IN",
+            "flush": true,
+            "data": "192.168.0.46"
+        }
+    ],
+    "authorities": [],
+    "additionals": []
+}
+resp {
+    "id": 0,
+    "type": "response",
+    "flags": 1024,
+    "flag_qr": true,
+    "opcode": "QUERY",
+    "flag_aa": true,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [],
+    "answers": [
+        {
+            "name": "CWC13a80b.local",
+            "type": "A",
+            "ttl": 0,
+            "class": "IN",
+            "flush": true,
+            "data": "192.168.0.46"
+        }
+    ],
+    "authorities": [],
+    "additionals": []
+}
+resp {
+    "id": 0,
+    "type": "response",
+    "flags": 1024,
+    "flag_qr": true,
+    "opcode": "QUERY",
+    "flag_aa": true,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [],
+    "answers": [
+        {
+            "name": "CWC13a80b.local",
+            "type": "A",
+            "ttl": 0,
+            "class": "IN",
+            "flush": true,
+            "data": "192.168.0.46"
+        }
+    ],
+    "authorities": [],
+    "additionals": []
+}
+resp {
+    "id": 0,
+    "type": "response",
+    "flags": 1024,
+    "flag_qr": true,
+    "opcode": "QUERY",
+    "flag_aa": true,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [],
+    "answers": [
+        {
+            "name": "CWC13a80b.local",
+            "type": "A",
+            "ttl": 0,
+            "class": "IN",
+            "flush": true,
+            "data": "192.168.0.46"
+        }
+    ],
+    "authorities": [],
+    "additionals": []
+}
+resp {
+    "id": 0,
+    "type": "response",
+    "flags": 1024,
+    "flag_qr": true,
+    "opcode": "QUERY",
+    "flag_aa": true,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [],
+    "answers": [
+        {
+            "name": "CWC13a80b.local",
+            "type": "A",
+            "ttl": 120,
+            "class": "IN",
+            "flush": true,
+            "data": "192.168.0.46"
+        }
+    ],
+    "authorities": [],
+    "additionals": [
+        {
+            "name": "CWC13a80b.local",
+            "type": "NSEC",
+            "ttl": 120,
+            "class": "IN",
+            "flush": false,
+            "data": {
+                "nextDomain": "CWC13a80b.local",
+                "rrtypes": [
+                    "A"
+                ]
+            }
+        }
+    ]
+}
+resp {
+    "id": 0,
+    "type": "response",
+    "flags": 1024,
+    "flag_qr": true,
+    "opcode": "QUERY",
+    "flag_aa": true,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [],
+    "answers": [
+        {
+            "name": "CWC13a80b.local",
+            "type": "A",
+            "ttl": 120,
+            "class": "IN",
+            "flush": true,
+            "data": "192.168.0.46"
+        }
+    ],
+    "authorities": [],
+    "additionals": [
+        {
+            "name": "CWC13a80b.local",
+            "type": "NSEC",
+            "ttl": 120,
+            "class": "IN",
+            "flush": false,
+            "data": {
+                "nextDomain": "CWC13a80b.local",
+                "rrtypes": [
+                    "A"
+                ]
+            }
+        }
+    ]
+}
+query {
+    "id": 0,
+    "type": "query",
+    "flags": 0,
+    "flag_qr": false,
+    "opcode": "QUERY",
+    "flag_aa": false,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [
+        {
+            "name": "ICPO-WFTEOSSystemService13a80b._ptp._tcp.local",
+            "type": "ANY",
+            "class": "UNKNOWN_32769"
+        }
+    ],
+    "answers": [],
+    "authorities": [
+        {
+            "name": "ICPO-WFTEOSSystemService13a80b._ptp._tcp.local",
+            "type": "SRV",
+            "ttl": 120,
+            "class": "IN",
+            "flush": false,
+            "data": {
+                "priority": 0,
+                "weight": 0,
+                "port": 15740,
+                "target": "CWC13a80b.local"
+            }
+        }
+    ],
+    "additionals": []
+}
+query {
+    "id": 0,
+    "type": "query",
+    "flags": 0,
+    "flag_qr": false,
+    "opcode": "QUERY",
+    "flag_aa": false,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [
+        {
+            "name": "ICPO-WFTEOSSystemService13a80b._ptp._tcp.local",
+            "type": "ANY",
+            "class": "UNKNOWN_32769"
+        }
+    ],
+    "answers": [],
+    "authorities": [
+        {
+            "name": "ICPO-WFTEOSSystemService13a80b._ptp._tcp.local",
+            "type": "SRV",
+            "ttl": 120,
+            "class": "IN",
+            "flush": false,
+            "data": {
+                "priority": 0,
+                "weight": 0,
+                "port": 15740,
+                "target": "CWC13a80b.local"
+            }
+        }
+    ],
+    "additionals": []
+}
+query {
+    "id": 0,
+    "type": "query",
+    "flags": 0,
+    "flag_qr": false,
+    "opcode": "QUERY",
+    "flag_aa": false,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [
+        {
+            "name": "ICPO-WFTEOSSystemService13a80b._ptp._tcp.local",
+            "type": "ANY",
+            "class": "UNKNOWN_32769"
+        }
+    ],
+    "answers": [],
+    "authorities": [
+        {
+            "name": "ICPO-WFTEOSSystemService13a80b._ptp._tcp.local",
+            "type": "SRV",
+            "ttl": 120,
+            "class": "IN",
+            "flush": false,
+            "data": {
+                "priority": 0,
+                "weight": 0,
+                "port": 15740,
+                "target": "CWC13a80b.local"
+            }
+        }
+    ],
+    "additionals": []
+}
+query {
+    "id": 0,
+    "type": "query",
+    "flags": 0,
+    "flag_qr": false,
+    "opcode": "QUERY",
+    "flag_aa": false,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [
+        {
+            "name": "ICPO-WFTEOSSystemService13a80b._ptp._tcp.local",
+            "type": "ANY",
+            "class": "UNKNOWN_32769"
+        }
+    ],
+    "answers": [],
+    "authorities": [
+        {
+            "name": "ICPO-WFTEOSSystemService13a80b._ptp._tcp.local",
+            "type": "SRV",
+            "ttl": 120,
+            "class": "IN",
+            "flush": false,
+            "data": {
+                "priority": 0,
+                "weight": 0,
+                "port": 15740,
+                "target": "CWC13a80b.local"
+            }
+        }
+    ],
+    "additionals": []
+}
+query {
+    "id": 0,
+    "type": "query",
+    "flags": 0,
+    "flag_qr": false,
+    "opcode": "QUERY",
+    "flag_aa": false,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [
+        {
+            "name": "ICPO-WFTEOSSystemService13a80b._ptp._tcp.local",
+            "type": "ANY",
+            "class": "UNKNOWN_32769"
+        }
+    ],
+    "answers": [],
+    "authorities": [
+        {
+            "name": "ICPO-WFTEOSSystemService13a80b._ptp._tcp.local",
+            "type": "SRV",
+            "ttl": 120,
+            "class": "IN",
+            "flush": false,
+            "data": {
+                "priority": 0,
+                "weight": 0,
+                "port": 15740,
+                "target": "CWC13a80b.local"
+            }
+        }
+    ],
+    "additionals": []
+}
+query {
+    "id": 0,
+    "type": "query",
+    "flags": 0,
+    "flag_qr": false,
+    "opcode": "QUERY",
+    "flag_aa": false,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [
+        {
+            "name": "ICPO-WFTEOSSystemService13a80b._ptp._tcp.local",
+            "type": "ANY",
+            "class": "UNKNOWN_32769"
+        }
+    ],
+    "answers": [],
+    "authorities": [
+        {
+            "name": "ICPO-WFTEOSSystemService13a80b._ptp._tcp.local",
+            "type": "SRV",
+            "ttl": 120,
+            "class": "IN",
+            "flush": false,
+            "data": {
+                "priority": 0,
+                "weight": 0,
+                "port": 15740,
+                "target": "CWC13a80b.local"
+            }
+        }
+    ],
+    "additionals": []
+}
+resp {
+    "id": 0,
+    "type": "response",
+    "flags": 1024,
+    "flag_qr": true,
+    "opcode": "QUERY",
+    "flag_aa": true,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [],
+    "answers": [
+        {
+            "name": "_ptp._tcp.local",
+            "type": "PTR",
+            "ttl": 0,
+            "class": "IN",
+            "flush": false,
+            "data": "ICPO-WFTEOSSystemService13a80b._ptp._tcp.local"
+        }
+    ],
+    "authorities": [],
+    "additionals": []
+}
+resp {
+    "id": 0,
+    "type": "response",
+    "flags": 1024,
+    "flag_qr": true,
+    "opcode": "QUERY",
+    "flag_aa": true,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [],
+    "answers": [
+        {
+            "name": "_ptp._tcp.local",
+            "type": "PTR",
+            "ttl": 0,
+            "class": "IN",
+            "flush": false,
+            "data": "ICPO-WFTEOSSystemService13a80b._ptp._tcp.local"
+        }
+    ],
+    "authorities": [],
+    "additionals": []
+}
+resp {
+    "id": 0,
+    "type": "response",
+    "flags": 1024,
+    "flag_qr": true,
+    "opcode": "QUERY",
+    "flag_aa": true,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [],
+    "answers": [
+        {
+            "name": "_ptp._tcp.local",
+            "type": "PTR",
+            "ttl": 0,
+            "class": "IN",
+            "flush": false,
+            "data": "ICPO-WFTEOSSystemService13a80b._ptp._tcp.local"
+        }
+    ],
+    "authorities": [],
+    "additionals": []
+}
+resp {
+    "id": 0,
+    "type": "response",
+    "flags": 1024,
+    "flag_qr": true,
+    "opcode": "QUERY",
+    "flag_aa": true,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [],
+    "answers": [
+        {
+            "name": "_ptp._tcp.local",
+            "type": "PTR",
+            "ttl": 0,
+            "class": "IN",
+            "flush": false,
+            "data": "ICPO-WFTEOSSystemService13a80b._ptp._tcp.local"
+        }
+    ],
+    "authorities": [],
+    "additionals": []
+}
+resp {
+    "id": 0,
+    "type": "response",
+    "flags": 1024,
+    "flag_qr": true,
+    "opcode": "QUERY",
+    "flag_aa": true,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [],
+    "answers": [
+        {
+            "name": "_ptp._tcp.local",
+            "type": "PTR",
+            "ttl": 0,
+            "class": "IN",
+            "flush": false,
+            "data": "ICPO-WFTEOSSystemService13a80b._ptp._tcp.local"
+        }
+    ],
+    "authorities": [],
+    "additionals": []
+}
+resp {
+    "id": 0,
+    "type": "response",
+    "flags": 1024,
+    "flag_qr": true,
+    "opcode": "QUERY",
+    "flag_aa": true,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [],
+    "answers": [
+        {
+            "name": "_ptp._tcp.local",
+            "type": "PTR",
+            "ttl": 0,
+            "class": "IN",
+            "flush": false,
+            "data": "ICPO-WFTEOSSystemService13a80b._ptp._tcp.local"
+        }
+    ],
+    "authorities": [],
+    "additionals": []
+}
+resp {
+    "id": 0,
+    "type": "response",
+    "flags": 1024,
+    "flag_qr": true,
+    "opcode": "QUERY",
+    "flag_aa": true,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [],
+    "answers": [
+        {
+            "name": "CWC13a80b.local",
+            "type": "A",
+            "ttl": 120,
+            "class": "IN",
+            "flush": true,
+            "data": "192.168.0.46"
+        }
+    ],
+    "authorities": [],
+    "additionals": [
+        {
+            "name": "CWC13a80b.local",
+            "type": "NSEC",
+            "ttl": 120,
+            "class": "IN",
+            "flush": false,
+            "data": {
+                "nextDomain": "CWC13a80b.local",
+                "rrtypes": [
+                    "A"
+                ]
+            }
+        }
+    ]
+}
+resp {
+    "id": 0,
+    "type": "response",
+    "flags": 1024,
+    "flag_qr": true,
+    "opcode": "QUERY",
+    "flag_aa": true,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [],
+    "answers": [
+        {
+            "name": "CWC13a80b.local",
+            "type": "A",
+            "ttl": 120,
+            "class": "IN",
+            "flush": true,
+            "data": "192.168.0.46"
+        }
+    ],
+    "authorities": [],
+    "additionals": [
+        {
+            "name": "CWC13a80b.local",
+            "type": "NSEC",
+            "ttl": 120,
+            "class": "IN",
+            "flush": false,
+            "data": {
+                "nextDomain": "CWC13a80b.local",
+                "rrtypes": [
+                    "A"
+                ]
+            }
+        }
+    ]
+}
+resp {
+    "id": 0,
+    "type": "response",
+    "flags": 1024,
+    "flag_qr": true,
+    "opcode": "QUERY",
+    "flag_aa": true,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [],
+    "answers": [
+        {
+            "name": "CWC13a80b.local",
+            "type": "A",
+            "ttl": 0,
+            "class": "IN",
+            "flush": true,
+            "data": "192.168.0.46"
+        }
+    ],
+    "authorities": [],
+    "additionals": []
+}
+resp {
+    "id": 0,
+    "type": "response",
+    "flags": 1024,
+    "flag_qr": true,
+    "opcode": "QUERY",
+    "flag_aa": true,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [],
+    "answers": [
+        {
+            "name": "CWC13a80b.local",
+            "type": "A",
+            "ttl": 0,
+            "class": "IN",
+            "flush": true,
+            "data": "192.168.0.46"
+        }
+    ],
+    "authorities": [],
+    "additionals": []
+}
+resp {
+    "id": 0,
+    "type": "response",
+    "flags": 1024,
+    "flag_qr": true,
+    "opcode": "QUERY",
+    "flag_aa": true,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [],
+    "answers": [
+        {
+            "name": "CWC13a80b.local",
+            "type": "A",
+            "ttl": 0,
+            "class": "IN",
+            "flush": true,
+            "data": "192.168.0.46"
+        }
+    ],
+    "authorities": [],
+    "additionals": []
+}
+resp {
+    "id": 0,
+    "type": "response",
+    "flags": 1024,
+    "flag_qr": true,
+    "opcode": "QUERY",
+    "flag_aa": true,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [],
+    "answers": [
+        {
+            "name": "CWC13a80b.local",
+            "type": "A",
+            "ttl": 0,
+            "class": "IN",
+            "flush": true,
+            "data": "192.168.0.46"
+        }
+    ],
+    "authorities": [],
+    "additionals": []
+}
+resp {
+    "id": 0,
+    "type": "response",
+    "flags": 1024,
+    "flag_qr": true,
+    "opcode": "QUERY",
+    "flag_aa": true,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [],
+    "answers": [
+        {
+            "name": "CWC13a80b.local",
+            "type": "A",
+            "ttl": 0,
+            "class": "IN",
+            "flush": true,
+            "data": "192.168.0.46"
+        }
+    ],
+    "authorities": [],
+    "additionals": []
+}
+resp {
+    "id": 0,
+    "type": "response",
+    "flags": 1024,
+    "flag_qr": true,
+    "opcode": "QUERY",
+    "flag_aa": true,
+    "flag_tc": false,
+    "flag_rd": false,
+    "flag_ra": false,
+    "flag_z": false,
+    "flag_ad": false,
+    "flag_cd": false,
+    "rcode": "NOERROR",
+    "questions": [],
+    "answers": [
+        {
+            "name": "CWC13a80b.local",
+            "type": "A",
+            "ttl": 0,
+            "class": "IN",
+            "flush": true,
+            "data": "192.168.0.46"
+        }
+    ],
+    "authorities": [],
+    "additionals": []
+}
+Terminate batch job (Y/N)? 

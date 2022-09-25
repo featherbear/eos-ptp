@@ -1,0 +1,24 @@
+{
+  "name": "eos-ptp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "discovery": "nodemon src/discovery.ts",
+    "test": "sucrase-node src/test.ts"
+  },
+  "devDependencies": {
+    "@types/multicast-dns": "^7.2.1",
+    "@types/node": "14.17.6",
+    "@types/node-fetch": "2",
+    "@types/node-ssdp": "^4.0.1",
+    "nodemon": "^2.0.20",
+    "sucrase": "^3.27.0"
+  },
+  "dependencies": {
+    "multicast-dns": "^7.2.5",
+    "node-fetch": "2",
+    "node-machine-id": "^1.1.12",
+    "node-ssdp": "^4.0.1"
+  }
+}
