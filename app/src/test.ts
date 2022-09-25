@@ -38,13 +38,20 @@ s.connect(15740, '192.168.0.46', function () {
                             console.log('data', data, decodeResponse(data));
                         })
                         let client = new DataManager(s)
-                        client.send(client._createOperationRequest(0x00000001, 0x1001))
+                        // client.send(client._createOperationRequest(0x00000001, 0x1001))
                         
-                        setTimeout(() => client.open_session(), 500)
-                        console.log('Gonna send record soon');
+// every 200ms send op with phase 0x1, opcode 0x9116
+// with the remote shooting window open, every 10 seconds send op wth phase 0x1, opcode, 0x911a
+
+                        // TODO: Do after response
+                        // setTimeout(() =>
+                         client.open_session()
+                        // , 500)
+                        console.log('Gonna send action soon');
                         setTimeout(() => {
                             console.log('SEND');
-                            client.do_record()
+                            client.do_test_setting()
+
                         }, 5000)
 
                     } else {
