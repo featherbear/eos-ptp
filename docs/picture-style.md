@@ -1,6 +1,6 @@
-# White Balance
+# Picture Style
 
-## Modes
+Type: Data Packet
 
 |Mode|Bytes|
 |:---|:---|

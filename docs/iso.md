@@ -2,6 +2,8 @@
 
 ## 1/3 Stop
 
+Type: Data Packet
+
 |ISO|Bytes|
 |:---:|:---|
 |Auto|`0c 00 00 00 03 d1 00 00 00 00 00 00`|
@@ -32,6 +34,8 @@
 |25600|`0c 00 00 00 03 d1 00 00 88 00 00 00`|
 
 ## 1 Stop
+
+Type: Data Packet
 
 |ISO|Bytes|
 |:---:|:---|

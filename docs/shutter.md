@@ -5,6 +5,8 @@
 
 ## 1/3 Stop
 
+Type: Data Packet
+
 |Speed|Bytes|
 |:---:|:---|
 |1/8|`0c 00 00 00 02 d1 00 00 50 00 00 00`|
@@ -37,6 +39,8 @@
 |1/4000|`0c 00 00 00 02 d1 00 00 98 00 00 00`|
 
 ## 1/2 Stop
+
+Type: Data Packet
 
 |Speed|Bytes|
 |:---:|:---|
