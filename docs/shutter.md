@@ -3,7 +3,7 @@
 > Note: Values for some speeds are different depending on the stop-mode  
 > e.g. See `1/10`
 
-## Shutter Speed (1/3 Stops)
+## 1/3 Stop
 
 |Speed|Bytes|
 |:---:|:---|
@@ -36,7 +36,7 @@
 |1/3200|`0c 00 00 00 02 d1 00 00 95 00 00 00`|
 |1/4000|`0c 00 00 00 02 d1 00 00 98 00 00 00`|
 
-## Shutter Speed (1/2 Stops)
+## 1/2 Stop
 
 |Speed|Bytes|
 |:---:|:---|
