@@ -68,9 +68,49 @@ Data: `02 80 00 00`
 
 Data: `03 80 00 00`
 
-
+---
 
 ## Focus Zone
+
+### Face Detect / Tracking AF
+
+#### Somewhere top-left
+
+```
+Picture Transfer Protocol
+    Length: 34
+    Packet Type: Operation Request Packet (0x00000006)
+    Data Phase Info: 0x00000001
+    Operation Code: 0x915b
+    Transaction ID: 0x00004485
+```
+
+```
+0000   58 d5 0a 13 a8 0b 00 15 17 d9 7c 5a 08 00 45 00
+0010   00 4a ff d2 40 00 80 06 00 00 c0 a8 00 37 c0 a8
+0020   00 2e 2e 56 3d 7c b1 bb d2 91 d1 42 b2 2c 50 18
+0030   f5 f2 81 f2 00 00 22 00 00 00 06 00 00 00 01 00
+0040   00 00 5b 91 85 44 00 00 03 00 00 00 20 00 00 00
+0050   64 01 00 00 00 00 00 00
+```
+
+Data: `03 00 00 00 20 00 00 00 64 01 00 00 00 00 00 00`
+
+#### Somewhere top-right
+
+Data: `03 00 00 00 18 1a 00 00 78 01 00 00 00 00 00 00`
+
+#### Somewhere bottom-left
+
+Data: `03 00 00 00 48 03 00 00 ed 0f 00 00 00 00 00 00`
+
+#### Somewhere bottom-right
+
+Data: `03 00 00 00 18 1a 00 00 d9 0f 00 00 00 00 00 00`
+
+#### Somewhere centre
+
+Data: `03 00 00 00 f8 0c 00 00 e0 08 00 00 00 00 00 00`
 
 ### 1-point AF
 
