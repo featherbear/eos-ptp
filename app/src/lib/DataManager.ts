@@ -1,5 +1,6 @@
 import type { Socket } from 'net'
 import { createPTP } from './ptp'
+import ISO from './iso'
 
 export default class DataManager {
     #socket: Socket
@@ -66,14 +67,22 @@ export default class DataManager {
         return createPTP(0x0000000c, payload)
     }
 
-    do_test_setting() {
+
+    do_set_ISO(iso: ISO) {
         let transactionID = this.nextCounter()
         this.send(this._createOperationRequest(0x2, 0x9110, transactionID))
 
-        let b = Buffer.from([0x0c, 0x00, 0x00, 0x00, 0x03, 0xd1, 0x00, 0x00, 0x68, 0x00, 0x00, 0x00])
+        let b = Buffer.from([0x0c, 0x00, 0x00, 0x00, 0x03, 0xd1, 0x00, 0x00, iso, 0x00, 0x00, 0x00])
 
         this.send(this._createStartDataPacket(b.length, transactionID))
         this.send(this._createEndDataPacket(transactionID, b))
+    }
+
+    do_test_setting() {
+        setTimeout(() => this.do_set_ISO(ISO.ISO_100), 0)
+        setTimeout(() => this.do_set_ISO(ISO.ISO_1600), 500)
+        setTimeout(() => this.do_set_ISO(ISO.ISO_3200), 1000)
+        setTimeout(() => this.do_set_ISO(ISO.ISO_AUTO), 1500)
     }
 
     do_record() {
