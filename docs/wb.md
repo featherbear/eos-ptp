@@ -19,6 +19,8 @@ Type: Data Packet
 
 ## Color Temperature
 
+Type: Data Packet
+
 |Temperature (K)|Bytes|
 |:---:|:---|
 |2500|`0c 00 00 00 0a d1 00 00 c4 09 00 00`|
