@@ -50,9 +50,10 @@ s.connect(15740, '192.168.0.46', function () {
                         console.log('Gonna send action soon');
                         setTimeout(() => {
                             console.log('SEND');
+                            // client.nextCounter()
                             client.do_test_setting()
 
-                        }, 5000)
+                        }, 2000)
 
                     } else {
                         console.error("Unexpected", decoded)

@@ -78,16 +78,36 @@ export default class DataManager {
         this.send(this._createEndDataPacket(transactionID, b))
     }
 
-    do_test_setting() {
-        setTimeout(() => this.do_set_ISO(ISO.ISO_100), 0)
-        setTimeout(() => this.do_set_ISO(ISO.ISO_1600), 500)
-        setTimeout(() => this.do_set_ISO(ISO.ISO_3200), 1000)
-        setTimeout(() => this.do_set_ISO(ISO.ISO_AUTO), 1500)
+    do_record_start() {
+        let transactionID = this.nextCounter()
+        console.log('Record start', transactionID);
+        this.send(this._createOperationRequest(0x2, 0x9110, transactionID))
+
+        let b = Buffer.from([0x0c, 0x00, 0x00, 0x00, 0xb8, 0xd1, 0x00, 0x00, 0x04, 0x00, 0x00, 0x00])
+
+        this.send(this._createStartDataPacket(b.length, transactionID))
+        this.send(this._createEndDataPacket(transactionID, b))
     }
 
-    do_record() {
-        this.send(this._createOperationRequest(0x01, 0x9116))
-        // wait for resp (0x07, opcode 0x2001 OK, transaction ID)
+    do_record_stop() {
+        let transactionID = this.nextCounter()
+        console.log('Record stop', transactionID);
+        this.send(this._createOperationRequest(0x2, 0x9110, transactionID))
+
+        let b = Buffer.from([0x0c, 0x00, 0x00, 0x00, 0xb8, 0xd1, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00])
+
+        this.send(this._createStartDataPacket(b.length, transactionID))
+        this.send(this._createEndDataPacket(transactionID, b))
+    }
+
+
+
+    do_test_setting() {
+        setTimeout(() => this.do_record_start(), 0)
+        setTimeout(() => this.do_set_ISO(ISO.ISO_1600), 500)
+        setTimeout(() => this.do_set_ISO(ISO.ISO_3200), 1000)
+        setTimeout(() => this.do_set_ISO(ISO.ISO_640), 1500)
+        setTimeout(() => this.do_record_stop(), 2000)
     }
 
     send(data: Buffer) {
