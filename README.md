@@ -1,12 +1,13 @@
 # eos-ptp
 
-Canon EOS Wi-Fi remote control protocol RE on the EOS R
+Reverse engineered Canon EOS Wi-Fi remote control protocol on the EOS R
 
 ## Why
 
-1. digiCamControl is only for USB devices
-2. The EOS SDK is hard to obtain in Oceania..
-3. Learning experience, or something...
+1. The EOS Utility only supports once device
+2. digiCamControl is only for USB devices
+3. The EOS SDK is hard to obtain in Oceania..
+4. Learning experience, or something...
 
 Realistically the wireless protocol is probably the same as the usual USB MTP/PTP protocol.  
 I wonder if I could just wrap the PTP protocol in a TCP/IP packet, or emulate a USB device...  
