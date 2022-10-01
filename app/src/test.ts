@@ -18,12 +18,13 @@ let lookups = Object.fromEntries(Object.entries(ValueType).map(([key, val]) => [
 
 client.on('state', function (data) {
     // console.log(data);
-    // let parsed = Object.fromEntries(Object.entries(data).map(([key, val] ) => [lookups[key.toString()], val]))
+    // let parsed = 
     // console.log(parsed);
 
-    for (let e of data) {
+    for (let e of (data.enums || [])) {
         console.log(lookups[e.type], e.value);
     }
+    console.log(Object.fromEntries(Object.entries(data.values).map(([key, val]) => [lookups[key.toString()], val]) || []));
 
 })
 

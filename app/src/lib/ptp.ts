@@ -154,12 +154,16 @@ type Value = {
     value: any
 }
 
+type EventStateData = {
+    values: { [type: number]: any }
+    enums: Value[]
+}
 
 const nullBuffer = Buffer.from([0x8, 0, 0, 0, 0, 0, 0, 0])
 function _extractValueData(data: Buffer) {
     console.log("Extract", data);
     // Assuming the values are all 16-bit 'thingies'
-    let parts: Value[] = []
+    let parts: { values: Value[], enums: Value[] } = { values: [], enums: [] }
     while (data.length > 0) {
         let length = data.readUint16LE(0);
 
@@ -168,10 +172,31 @@ function _extractValueData(data: Buffer) {
             let type: ValueType = data.readUint16LE(8)
 
             let value = data.slice(12, length)
-            parts.push(<Value>{
-                type,
-                value
-            })
+            if (value[0] == 0x03 && value.length > 4) {
+                let enumLength = value.readUint16LE(4)
+                value = value.slice(8)
+                let enums = []
+
+                while (value.length > 0) {
+                    enums.push(value.readUint32LE(0))
+                    value = value.slice(4)
+                }
+
+                if (enums.length != enumLength) {
+                    console.warn(enums, "didn't match expected size of", enumLength)
+                }
+
+                parts.enums.push(<Value>{
+                    type,
+                    value: enums
+                })
+
+            } else {
+                parts.values.push(<Value>{
+                    type,
+                    value: value.length == 4 ? value.readUInt32LE() : value
+                })
+            }
         }
 
         data = data.slice(length)
@@ -180,13 +205,16 @@ function _extractValueData(data: Buffer) {
     return parts
 }
 
-export function extractValueData(data: Buffer) {
-    // let map: { [id in ValueType]?: number } = {}
-    // for (let value of _extractValueData(data)) {
-    //     map[value.type] = value.value
-    // }
+export function extractValueData(data: Buffer): EventStateData {
+    let state = _extractValueData(data)
 
-    // return map
+    let map: { [id in ValueType]?: number } = {}
+    for (let value of state.values) {
+        map[value.type] = value.value
+    }
 
-    return _extractValueData(data)
+    return {
+        values: map,
+        enums: state.enums
+    }
 }
