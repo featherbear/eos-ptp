@@ -9,16 +9,18 @@
   },
   "devDependencies": {
     "@types/multicast-dns": "^7.2.1",
-    "@types/node": "14.17.6",
+    "@types/node": "14",
     "@types/node-fetch": "2",
     "@types/node-ssdp": "^4.0.1",
     "nodemon": "^2.0.20",
-    "sucrase": "^3.27.0"
+    "sucrase": "^3.27.0",
+    "typescript": "^4.8.4"
   },
   "dependencies": {
     "multicast-dns": "^7.2.5",
     "node-fetch": "2",
     "node-machine-id": "^1.1.12",
-    "node-ssdp": "^4.0.1"
+    "node-ssdp": "^4.0.1",
+    "queue": "^6.0.2"
   }
 }
