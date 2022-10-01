@@ -1,5 +1,5 @@
 import { Socket } from 'net'
-import { createEventRequest, createInit, createPTP, decodeResponsePTP, OpCode, PacketOpResponse, PacketPTP, PacketPTPBase, PacketType } from './ptp'
+import { createEventRequest, createInit, createPTP, decodeResponsePTP, extractValueData, OpCode, PacketOpResponse, PacketPTP, PacketPTPBase, PacketType } from './ptp'
 import ISO from './iso'
 import Queue, { QueueWorker } from 'queue'
 import { EventEmitter } from 'events'
@@ -11,20 +11,33 @@ type ConnectionDetails = {
 }
 type DataCallback = (data?: any) => void
 type TransactionTask = (transactionID: number) => any
+
+type TransactionID = number
 export default class DataManager extends EventEmitter {
     #socket: Socket
 
-    #transactionCounter: number
-    #lastReceivedTransactionID: number
+    #transactionCounter: TransactionID
+    #lastReceivedTransactionID: TransactionID
 
     #PTPsendQueue: Queue
     #PTPcallbackMap: {
-        [id: number]: DataCallback
+        [id: TransactionID]: DataCallback
     }
     readonly CAMERA_PORT = 15740
     readonly RETRY_BACKOFF_MS = 250
+    readonly STATUS_REFRESH_RATE_MS = 500
 
     #connectionDetails: ConnectionDetails
+
+    #recvBytesBuffer!: Buffer
+    #recvBytesRemain!: number
+    #recvBytesFor!: TransactionID
+
+    #__resetRecvBuffer() {
+        this.#recvBytesRemain = 0
+        this.#recvBytesBuffer = Buffer.allocUnsafe(0)
+        this.#recvBytesFor = -1
+    }
 
     constructor(options: ConnectionDetails) {
         super()
@@ -43,16 +56,60 @@ export default class DataManager extends EventEmitter {
             concurrency: 1
         })
 
+        this.#__resetRecvBuffer();
+
         this.#socket.on('data', (bytes) => {
             // Parse data, check if 
             this.emit('raw', bytes)
 
-            let packet = <PacketPTP>decodeResponsePTP(bytes)
+            console.log('RECEIVE', bytes);
 
+            while (this.#recvBytesRemain && bytes.length) {
+                let incomingData = bytes.slice(0, this.#recvBytesRemain)
+                bytes = bytes.slice(this.#recvBytesRemain)
+
+                console.log(`${this.#recvBytesRemain} bytes remaining, ${incomingData.length} incoming, ${incomingData.length + bytes.length} bytes total`);
+
+                this.#recvBytesBuffer = Buffer.concat([this.#recvBytesBuffer, incomingData])
+                this.#recvBytesRemain -= incomingData.length
+            }
+            if (!bytes.length) return
+
+            let packet = <PacketPTP>decodeResponsePTP(bytes)
             switch (packet.packetType) {
+
+                case PacketType.DATA_START: {
+                    packet.transactionID = packet.data.readUint32LE(0)
+                    // TODO: 64-bit data length
+                    packet.dataLen = packet.data.readUInt32LE(4)
+                    packet.extraData = packet.data.slice(12)
+
+                    this.#__resetRecvBuffer()
+
+                    console.log(`Going to wait for ${packet.dataLen} bytes for transaction #${packet.transactionID}`);
+                    this.#recvBytesFor = packet.transactionID
+
+                    // Sometimes, the data start and payload packets are received as one
+                    let surplusData = packet.extraData.slice(12)
+                    this.#recvBytesBuffer = surplusData
+                    this.#recvBytesRemain = packet.dataLen -= surplusData.length
+                    break;
+                }
+
+                case PacketType.DATA_END: {
+                    console.log('DATA_END');
+                    break
+                }
+
                 case PacketType.OP_RESPONSE: {
                     packet.opcode = packet.data.readUint16LE(0)
                     packet.transactionID = packet.data.readUint32LE(2)
+
+                    if (this.#recvBytesFor == packet.transactionID) {
+                        console.log('ADD BUFFER TO RESP');
+                        packet.buffer = Buffer.from(this.#recvBytesBuffer)
+                        this.#__resetRecvBuffer();
+                    }
                     break;
                 }
 
@@ -137,12 +194,21 @@ export default class DataManager extends EventEmitter {
                                 throw new Error("Unexpected response to connection request")
                             }
 
-
                             await this.#__pushTransaction((transactionID) => {
                                 // TODO: Session ID changes?
                                 let sessionID = Buffer.from([0x41, 0x00, 0x00, 0x00])
                                 this.send(this._createOperationRequest(0x01, 0x1002, transactionID, sessionID))
                             }, 0)
+
+
+
+                            // TODO: Keep the data state stored somewhere?
+                            let stateLoop = () => {
+                                this.getDeviceState().finally(() => {
+                                    setTimeout(() => stateLoop(), this.STATUS_REFRESH_RATE_MS)
+                                })
+                            }
+                            stateLoop()
 
                             resolve(undefined)
                         })
@@ -150,6 +216,16 @@ export default class DataManager extends EventEmitter {
                 })
             })
         })
+    }
+
+    async getDeviceState() {
+        let packet = await this._withTransaction<PacketOpResponse>((transactionID) => {
+            this.send(this._createOperationRequest(0x1, 0x9116, transactionID))
+        })
+
+        let data = extractValueData(packet.buffer!)
+        this.emit('state', data)
+        return data
     }
 
     nextCounter() {

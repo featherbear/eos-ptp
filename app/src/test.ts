@@ -1,6 +1,7 @@
 import { Socket } from 'net'
 import DataManager from './lib/DataManager';
 import ISO from './lib/iso';
+import { extractValueData } from './lib/ptp';
 
 let s = new Socket()
 
@@ -16,18 +17,27 @@ client.connect().then(() => {
     console.log('Connected');
 
 
-    let fn = async () => {
-        console.log('START 10000');
-        await client.do_set_ISO(ISO.ISO_10000)
-        console.log('END 10000');
+    client.on('state', function (data) {
+        console.log(data);
+    })
 
-        setTimeout(async () => {
-            console.log('START 1600');
-            await client.do_set_ISO(ISO.ISO_1600)
-            console.log('END 10000');
-            setTimeout(fn, 1000)
-        }, 1000)
+    let fn = async () => {
+
+        // console.log('START 10000');
+        // await client.do_set_ISO(ISO.ISO_10000)
+        // console.log('END 10000');
+
+        // setTimeout(async () => {
+        //     console.log('START 1600');
+        //     await client.do_set_ISO(ISO.ISO_1600)
+        //     console.log('END 10000');
+        //     setTimeout(fn, 1000)
+        // }, 1000)
     }
+
+    // client.on('raw', function (data) {
+    //     console.log(data);
+    // })
 
     fn()
 
