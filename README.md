@@ -4,7 +4,7 @@ Reverse engineered Canon EOS Wi-Fi remote control protocol on the EOS R
 
 ## Why
 
-1. The EOS Utility only supports once device
+1. The EOS Utility only supports one device
 2. digiCamControl is only for USB devices
 3. The EOS SDK is hard to obtain in Oceania..
 4. Learning experience, or something...
