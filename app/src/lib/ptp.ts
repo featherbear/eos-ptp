@@ -31,7 +31,10 @@ export enum PacketType {
 }
 export enum OpCode {
     OK = 0x2001,
-    BUSY = 0x2019
+    BUSY = 0x2019,
+
+    GetDeviceInfo = 0x1001,
+    OpenSession = 0x1002
 }
 
 export type PacketPTP = PacketOpResponse | PacketInitResponse | PacketInitFail | PacketDataStart | PacketDataEnd
@@ -79,7 +82,7 @@ export type PacketDataEnd = PacketPTPBase & {
 export function decodeResponsePTP(data: Buffer): PacketPTPBase {
     let length = data.readUInt32LE()
     let packetType = data.readUInt32LE(4)
-    data = data.slice(8)
+    data = data.slice(8, length)
 
     return { length, packetType, data }
 }
@@ -148,19 +151,23 @@ export enum ValueType {
 
 type Value = {
     type: ValueType,
-    value: number
+    value: any
 }
 
+
+const nullBuffer = Buffer.from([0x8, 0, 0, 0, 0, 0, 0, 0])
 function _extractValueData(data: Buffer) {
+    console.log("Extract", data);
     // Assuming the values are all 16-bit 'thingies'
     let parts: Value[] = []
     while (data.length > 0) {
         let length = data.readUint16LE(0);
 
-        let type: ValueType = data.readUint16LE(4)
+        if (!(length == 0x8 && data.equals(nullBuffer))) {
 
-        if (type != ValueType.NULL) {
-            let value = data.readUint16LE(8)
+            let type: ValueType = data.readUint16LE(8)
+
+            let value = data.slice(12, length)
             parts.push(<Value>{
                 type,
                 value
@@ -174,10 +181,12 @@ function _extractValueData(data: Buffer) {
 }
 
 export function extractValueData(data: Buffer) {
-    let map: { [id in ValueType]?: number } = {}
-    for (let value of _extractValueData(data)) {
-        map[value.type] = value.value
-    }
+    // let map: { [id in ValueType]?: number } = {}
+    // for (let value of _extractValueData(data)) {
+    //     map[value.type] = value.value
+    // }
 
-    return map
+    // return map
+
+    return _extractValueData(data)
 }

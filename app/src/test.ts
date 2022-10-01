@@ -1,7 +1,7 @@
 import { Socket } from 'net'
 import DataManager from './lib/DataManager';
 import ISO from './lib/iso';
-import { extractValueData } from './lib/ptp';
+import { extractValueData, ValueType } from './lib/ptp';
 
 let s = new Socket()
 
@@ -13,13 +13,24 @@ let client = new DataManager({
     clientGuid: Buffer.from("\xae\x6d\x94\x5c\x56\xfa\xfb\x44\x82\xe5\x0b\x5b\x15\xe4\xfd\x05", 'latin1')
 })
 
+
+let lookups = Object.fromEntries(Object.entries(ValueType).map(([key, val]) => [val.toString(), key]))
+
+client.on('state', function (data) {
+    // console.log(data);
+    // let parsed = Object.fromEntries(Object.entries(data).map(([key, val] ) => [lookups[key.toString()], val]))
+    // console.log(parsed);
+
+    for (let e of data) {
+        console.log(lookups[e.type], e.value);
+    }
+
+})
+
 client.connect().then(() => {
     console.log('Connected');
 
 
-    client.on('state', function (data) {
-        console.log(data);
-    })
 
     let fn = async () => {
 
